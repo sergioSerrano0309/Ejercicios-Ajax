@@ -1,5 +1,5 @@
 function buscarPaises() {
- 
+  
     let busqueda = document.getElementById("pais").value;
       
       let llamada = new XMLHttpRequest();
@@ -18,16 +18,10 @@ function buscarPaises() {
           let text = document.createTextNode(nombre);
           p.appendChild(text);
           p.innerHTML += ", "
-          console.log(p.innerText)
-          }
         }
       }
+    }
 
-      // Indico que es una peticion POST
-      llamada.open("GET", url+params, true);
-      // Esta linea es necesaria en una peticion POST
-      llamada.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      llamada.send(params); // Le paso los parametros
-
-      
-  }
+    llamada.open("GET", url+params, true);
+    llamada.send(params);   
+}
