@@ -1,5 +1,4 @@
 function buscarPaises() {
-  
     let busqueda = document.getElementById("pais").value;
       
       let llamada = new XMLHttpRequest();
