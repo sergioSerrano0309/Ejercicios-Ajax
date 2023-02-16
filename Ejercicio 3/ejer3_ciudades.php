@@ -8,15 +8,19 @@
 	}
 
     mysqli_select_db($conexion, 'world');
- 
-    $resultado = mysqli_query($conexion, "select Name from country order by Name");
+    $pais = $_GET['pais'];
+    $resultado = mysqli_query($conexion, "select Name from city where CountryCode = '".$pais."' order by Name");
  
     $paises = array();
  
     while ($fila = mysqli_fetch_assoc($resultado)) {
         array_push($paises, $fila['Name']);
+        
     }
       
-    echo ($paises);
+    
+    for ($i=0; $i < count($paises); $i++) { 
+        echo ($paises[$i]).",";
+    }
 
 ?>
