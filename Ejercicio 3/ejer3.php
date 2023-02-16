@@ -9,7 +9,7 @@
 
     mysqli_select_db($conexion, 'world');
  
-    $resultado = mysqli_query($conexion, "select Name from country where order by Name");
+    $resultado = mysqli_query($conexion, "select Name from country order by Name");
  
     $paises = array();
  

@@ -1,4 +1,8 @@
 window.onload = function(){
+    let selectPaises = document.getElementById("pais");
+    selectPaises.addEventListener("change", listadoCiudades);
+    let selectCiudades = document.getElementById("ciudad");
+    selectPaises.addEventListener("change", info)
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function()
     {
@@ -6,9 +10,11 @@ window.onload = function(){
         {
             let selectPaises = document.getElementById("pais");
             let paises = xmlhttp.responseText;
-            foreach(let pais of paises)
+
+            for(let pais of paises)
             {
                 let option = createElement("option");
+                
                 selectPaises.appendChild(option)
             }
         }
@@ -17,11 +23,16 @@ window.onload = function(){
     xmlhttp.open("GET", "ejer3.php", true)
     xmlhttp.send();
 }
-    
+
 function listadoCiudades()
 {
     let selectCiudades = document.getElementById("ciutat")
     let option = document.createElement("option")
     option.innerHTML = "1"
     selectCiudades.appendChild(option)
+}
+
+function info()
+{
+
 }

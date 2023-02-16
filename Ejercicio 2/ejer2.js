@@ -1,3 +1,9 @@
+window.onload = function()
+{
+    let letra = document.getElementById("letra")
+    letra.addEventListener("change", buscarPorLetra)
+}
+
 function buscarPorLetra()
 {
     let letra = document.getElementById("letra").value

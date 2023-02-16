@@ -1,3 +1,9 @@
+window.onload = function()
+{
+  let busqueda = document.getElementById("pais")
+  busqueda.addEventListener("keyup", buscarPaises)
+}
+
 function buscarPaises() {
     let busqueda = document.getElementById("pais").value;
       
@@ -21,6 +27,6 @@ function buscarPaises() {
       }
     }
 
-    llamada.open("GET", url+params, true);
-    llamada.send(params);   
+  llamada.open("GET", url+params, true);
+  llamada.send(params);   
 }
